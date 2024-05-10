@@ -18,7 +18,7 @@ class SimpleLinearRegression:
         b0 = target_mean - b1 * feature_mean
         self.b0 = b0
         self.b1 = b1
-        print(f"Model fitted. b0: {b0}, b1: {b1}")
+        print(f"Model fitted \n b0: {b0}, b1: {b1}")
         return b0, b1
 
     def predict(self, feature_to_predict):
