@@ -1,13 +1,15 @@
-from pre_processing.pre_processing import pre_processing_dataset
+from pre_processing.pre_processing import pre_processing
 from regression.simple import SimpleLinearRegression
 from visualization.plot import linear_regression_plot
 from metrics import rmse
 
-X_train_processed, X_test_processed, y_train_processed, y_test_processed = pre_processing_dataset()
-x_train = X_train_processed
-y_train = y_train_processed
-x_test = X_test_processed
-y_test = y_test_processed
+
+X_train_processed, X_test_processed, y_train_processed, y_test_processed = pre_processing()
+
+x_train = [elemento for sublista in X_train_processed for elemento in sublista]
+y_train = [elemento for sublista in y_train_processed for elemento in sublista]
+x_test = [elemento for sublista in X_test_processed for elemento in sublista]
+y_test = [elemento for sublista in y_test_processed for elemento in sublista]
 
 model = SimpleLinearRegression()
 model.fit(x_train, y_train)

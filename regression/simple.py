@@ -31,3 +31,4 @@ class SimpleLinearRegression:
         
         print(f"Target predicted: {targets_predicted}")    
         return targets_predicted
+    
