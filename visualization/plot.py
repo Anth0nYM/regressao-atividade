@@ -22,6 +22,7 @@ def simple_linear_regression_plot(true_target, pred_feature, pred_target, b0, b1
     
 def multiple_linear_regression_plot(true_target, X, pred_target, betas):
     # Coletando os valores das variáveis independentes
+    
     x1 = X[:, 0]
     x2 = X[:, 1]
 
