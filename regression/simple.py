@@ -18,8 +18,7 @@ class SimpleLinearRegression:
         b0 = target_mean - b1 * feature_mean
         self.b0 = b0
         self.b1 = b1
-        print(f"Model fitted \n b0: {b0}, b1: {b1}")
-        return b0, b1
+        return True if b0 and b1 else False
 
     def predict(self, feature_to_predict):
         if self.b0 is None or self.b1 is None:
@@ -28,6 +27,7 @@ class SimpleLinearRegression:
         for f in feature_to_predict:
             target_predicted = f * self.b1 + self.b0
             targets_predicted.append(target_predicted)
-        
-        print(f"Target predicted: {targets_predicted}")    
+            
         return targets_predicted
+    
+    def get_coefficients(self): return self.b0, self.b1
